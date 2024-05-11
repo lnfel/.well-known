@@ -30,3 +30,12 @@ In the case of a GitHub Pages domain, DNS verification sounds unable to do alrea
 If this guide was helpful, please consider starring this repository. Thank you!
 
 Credits to source: https://github.com/oyepriyansh/.well-known
+
+---
+
+# Using with sveltekit app
+
+The above steps would fail when using sveltekit app, folders with (.) prefix are automatically rejected by sveltekit as discussed on the following issue thread:
+> https://github.com/sveltejs/kit/issues/3340
+
+We can use the [params matcher](https://kit.svelte.dev/docs/advanced-routing#matching) or simply creating a folder named `.well-known` in `static folder` then putting `discord` file inside it.
